@@ -1,19 +1,22 @@
 # fetchercise
 An exercise for Fetch ! 
 
-#Prereqs 
+# Prereqs 
+
 You will need go, git, and something to request 
 If you use postman you can use the following collection to test all the requests that were mentioned in the pdf
+
 https://www.getpostman.com/collections/48d8e08a3dc3bd356ba8
 
 If you don't have go here's a link to download
 https://go.dev/doc/install
 
-#Caveats
+# Caveats
+
 I think I immediately fail because I don't match the results but I didnt understand why the balance isnt updated as the posts are updated and by the time I realized that 
 I felt like I've spent too much time on this (about a full working day) too much from a standpoint of if I take too long to do this than maybe I don't fit in. Thank you for giving me this challenge
 
-#Run 
+# Run 
 
 from any folder 
 I'm not sure if you need to run go mod init it should be included in the pull but just incase 
@@ -28,8 +31,9 @@ I'm not sure if you need to run go mod init it should be included in the pull bu
 
 	
 
-#Curls
-##POSTS
+# Curls
+
+## POSTS
 
 	curl --location --request POST 'localhost:8080/pay' \
 	--header 'Content-Type: application/json' \
@@ -64,11 +68,11 @@ I'm not sure if you need to run go mod init it should be included in the pull bu
 	--data-raw '{ "payer": "DANNON", "points": 300, "timestamp": "2020-10-31T10:00:00Z" }
 	'
 
-##Get
+## Get
 
 	curl --location --request GET 'http://localhost:8080/checkBalances'
 
-##Put
+## Put
 
 	curl --location --request PUT 'http://localhost:8080/spend' \
 	--header 'Content-Type: application/json' \
@@ -76,6 +80,6 @@ I'm not sure if you need to run go mod init it should be included in the pull bu
 	    "points": 5000
 	}'
 
-##Get
+## Get
 
 	curl --location --request GET 'http://localhost:8080/checkBalances'
